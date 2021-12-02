@@ -152,7 +152,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     timer.start("Load Model")
-    net.load(args.trained_model)
+    net.init_from_pretrained_ssd(args.trained_model)
     net = net.to(DEVICE)
     print(f'It took {timer.end("Load Model")} seconds to load the model.')
     if args.net == 'vgg16-ssd':
